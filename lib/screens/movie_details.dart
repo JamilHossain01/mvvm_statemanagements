@@ -16,7 +16,7 @@ class MovieDetailsScreen extends StatelessWidget {
         child: Stack(
           children: [
             SizedBox(
-              height: size.height * 0.45,
+              height: size.height * 0.55,
               width: double.infinity,
               child: const CachedImageWidget(
                 imgUrl: MyAppConstants.movieImage,
@@ -35,6 +35,7 @@ class MovieDetailsScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 25),
                         child: Material(
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
                           child: Padding(
                             padding: const EdgeInsets.all(16.0),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mvvm_statemanagements/screens/movies_screen.dart';
 import 'package:mvvm_statemanagements/service/get_it.dart';
 import 'package:mvvm_statemanagements/service/navigation_service.dart';
@@ -8,6 +10,12 @@ import 'screens/splash_screen.dart';
 
 void main() {
   setupLocator();
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) async {
+    await dotenv.load(fileName: "assets/.env");
+  });
+
   runApp(const MyApp());
 }
 
